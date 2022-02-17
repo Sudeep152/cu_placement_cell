@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_bar"
+    app:startDestination="@id/student_Login_Fragment">
+    <fragment
+        android:id="@+id/student_Login_Fragment"
+        android:name="com.shashank.cu_placement_cell.ui.auth.Student_Login_Fragment"
+        android:label="Student_Login_Fragment" >
+        <action
+            android:id="@+id/action_student_Login_Fragment_to_student_Regitster_Fragment"
+            app:destination="@id/student_Regitster_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/student_Regitster_Fragment"
+        android:name="com.shashank.cu_placement_cell.ui.auth.Student_Regitster_Fragment"
+        android:label="fragment_student__regitster_"
+        tools:layout="@layout/fragment_student__regitster_" />
+</navigation>

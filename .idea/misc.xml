@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Chandigrah Uni Project/cu_placement_cell/app/src/main/res/drawable/button_desgin.xml" value="0.1855" />
         <entry key="..\:/Chandigrah Uni Project/cu_placement_cell/app/src/main/res/layout/activity_main.xml" value="0.21927083333333333" />
         <entry key="..\:/Chandigrah Uni Project/cu_placement_cell/app/src/main/res/layout/activity_splash_screen.xml" value="0.21144024514811033" />
+        <entry key="..\:/Chandigrah Uni Project/cu_placement_cell/app/src/main/res/layout/fragment_student__login_.xml" value="0.2" />
+        <entry key="..\:/Chandigrah Uni Project/cu_placement_cell/app/src/main/res/layout/fragment_student__regitster_.xml" value="0.152" />
       </map>
     </option>
   </component>

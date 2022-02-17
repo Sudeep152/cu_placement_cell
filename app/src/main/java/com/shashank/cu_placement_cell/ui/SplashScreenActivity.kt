@@ -25,7 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
         handler.postDelayed({
             startActivity(Intent(this,MainActivity::class.java))
             finish()
-        },1500)
+        },1700)
 
 
 
