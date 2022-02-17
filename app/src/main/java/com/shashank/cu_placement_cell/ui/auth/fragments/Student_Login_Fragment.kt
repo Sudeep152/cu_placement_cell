@@ -26,6 +26,7 @@ class Student_Login_Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.gotoReg.setOnClickListener {
+            Toast.makeText(context, "hi adi", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_student_Login_Fragment_to_student_Regitster_Fragment)
         }
     }
