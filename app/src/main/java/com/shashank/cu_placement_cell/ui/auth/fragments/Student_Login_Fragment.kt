@@ -27,7 +27,7 @@ class Student_Login_Fragment : Fragment() {
 
         binding.gotoReg.setOnClickListener {
             Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_student_Login_Fragment_to_student_Regitster_Fragment)
+            //findNavController().navigate(R.id.action_student_Login_Fragment_to_student_Regitster_Fragment)
         }
     }
 
