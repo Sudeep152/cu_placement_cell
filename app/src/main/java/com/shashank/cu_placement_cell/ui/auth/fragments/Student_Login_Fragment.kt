@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.shashank.cu_placement_cell.R
 import com.shashank.cu_placement_cell.databinding.FragmentStudentLoginBinding
@@ -25,7 +26,8 @@ class Student_Login_Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.gotoReg.setOnClickListener {
-            findNavController().navigate(R.id.action_student_Login_Fragment_to_student_Regitster_Fragment)
+            Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show()
+            //findNavController().navigate(R.id.action_student_Login_Fragment_to_student_Regitster_Fragment)
         }
     }
 
