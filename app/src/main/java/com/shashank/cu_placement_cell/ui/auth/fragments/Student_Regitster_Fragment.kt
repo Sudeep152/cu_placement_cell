@@ -11,7 +11,10 @@ import com.shashank.cu_placement_cell.R
 import com.shashank.cu_placement_cell.databinding.FragmentStudentRegitsterBinding
 import com.shashank.cu_placement_cell.other.EventObserver
 import com.shashank.cu_placement_cell.repository.AuthRepository
+import com.shashank.cu_placement_cell.repository.ProfileRepository
 import com.shashank.cu_placement_cell.ui.auth.viewmodel.AuthViewModelFactory
+import com.shashank.cu_placement_cell.ui.auth.viewmodel.ProfileViewModel
+import com.shashank.cu_placement_cell.ui.auth.viewmodel.ProfileViewModelFactory
 import com.shashank.cu_placement_cell.ui.auth.viewmodel.Student_Auth_ViewModel
 import kotlinx.android.synthetic.main.fragment_student__regitster_.*
 
@@ -20,14 +23,18 @@ class Student_Regitster_Fragment : Fragment(R.layout.fragment_student__regitster
 
     lateinit var authViewModel: Student_Auth_ViewModel
     lateinit var repository: AuthRepository
+    lateinit var prorepository: ProfileRepository
+    lateinit var profileViewModel: ProfileViewModel
 
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         repository = AuthRepository()
+        prorepository= ProfileRepository()
         authViewModel = ViewModelProvider(this,
             AuthViewModelFactory(repository)).get(Student_Auth_ViewModel::class.java)
+        profileViewModel= ViewModelProvider(this,ProfileViewModelFactory(prorepository)).get(ProfileViewModel::class.java)
 
         subscribeToObservers()
         regEdt.setOnClickListener {
@@ -57,6 +64,12 @@ class Student_Regitster_Fragment : Fragment(R.layout.fragment_student__regitster
             }
         ){
             Toast.makeText(activity, "${it}", Toast.LENGTH_SHORT).show()
+            val name = nameEdt.text.toString()
+            val email = emailEdt.text.toString()
+            val mobile = mobEdt.text.toString()
+            val studentId = idEdt.text.toString()
+            val course = courseEdt.text.toString()
+            profileViewModel.profileSetUp(name,email,mobile,studentId,course)
         })
     }
 
