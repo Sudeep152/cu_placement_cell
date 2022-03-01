@@ -37,7 +37,7 @@ class EventObserver<T>(
             is CustomResponse.Error ->{
                t.getContentIfNotHandled()?.let {
                    onError?.let { error ->
-                       error(it.message!!)
+                       error(it.message.toString()!!)
                    }
                }
             }

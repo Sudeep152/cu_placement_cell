@@ -6,6 +6,6 @@ inline fun <T> safeCall(action: () -> CustomResponse<T>): CustomResponse<T> {
     return try {
         action()
     } catch(e: Exception) {
-        CustomResponse.Error("Something went wrong")
+        CustomResponse.Error(e.message ?: "An unknown error occured")
     }
 }

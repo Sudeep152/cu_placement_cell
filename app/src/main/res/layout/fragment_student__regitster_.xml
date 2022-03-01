@@ -47,8 +47,9 @@
             app:startIconDrawable="@drawable/ic_baseline_person_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/nameEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -64,8 +65,9 @@
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/emailEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -81,8 +83,9 @@
             app:startIconDrawable="@drawable/ic_baseline_phone_android_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/mobEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -98,8 +101,9 @@
             app:startIconDrawable="@drawable/ic_baseline_perm_contact_calendar_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/idEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -116,8 +120,9 @@
             app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/passEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -133,8 +138,9 @@
             app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/re_passEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -150,8 +156,9 @@
             app:startIconDrawable="@drawable/ic_baseline_menu_book_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+                android:id="@+id/courseEdt"
 
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
 
@@ -159,7 +166,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/regEdt"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

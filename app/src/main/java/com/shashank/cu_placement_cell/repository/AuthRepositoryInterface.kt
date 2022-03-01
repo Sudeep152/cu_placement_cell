@@ -8,4 +8,5 @@ interface AuthRepositoryInterface {
     suspend fun register(email:String,password:String,studentUid:String):CustomResponse<AuthResult>
 
 
+
 }

@@ -1,6 +1,7 @@
 package com.shashank.cu_placement_cell.ui.auth.viewmodel
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,56 +12,48 @@ import com.shashank.cu_placement_cell.other.BaseClass.Companion.MIN_VAL
 import com.shashank.cu_placement_cell.other.CustomResponse
 import com.shashank.cu_placement_cell.other.Event
 import com.shashank.cu_placement_cell.repository.AuthRepository
+import com.shashank.cu_placement_cell.repository.AuthRepositoryInterface
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class Student_Auth_ViewModel(private  val repository: AuthRepository,private val context: Context
-
-, private  val dispatcher: CoroutineDispatcher
-):ViewModel() {
+class Student_Auth_ViewModel(private  val repository: AuthRepositoryInterface
+,  private val dispatcher: CoroutineDispatcher= Dispatchers.Main):ViewModel() {
 
 
-    private val _registration_status= MutableLiveData<Event<CustomResponse<AuthResult>>>()
-    private val registration_status: MutableLiveData<Event<CustomResponse<AuthResult>>> =_registration_status
+    private val _registerStatus = MutableLiveData<Event<CustomResponse<AuthResult>>>()
+    val  registerStatus : LiveData<Event<CustomResponse<AuthResult>>> = _registerStatus
 
 
-    fun register(email:String,password:String,userFullName:String,mobileNumber:String,studentUID:String,reEnterPassword:String,
 
-                 course:String){
+    fun register(email:String,password:String,userFullName:String,mobileNumber:String,studentUID:String,reEnterPassword:String,course:String){
 
         val error = if(email.isEmpty() ||password.isEmpty()||userFullName.isEmpty()||studentUID.isEmpty()
             || mobileNumber.isEmpty()||reEnterPassword.isEmpty()||course.isEmpty()){
-            error("Enter all fields")
+            "Enter all fields"
         }else if(password!=reEnterPassword){
-            error("Please enter same password")
+            "Please enter same password"
         }else if(password.length< MIN_VAL){
-            error("Please enter 6digit password")
+            "Please enter 6digit password"
         }else null
+        error?.let {
+            _registerStatus.postValue(Event(CustomResponse.Error(it)))
+            return
+        }
+        _registerStatus.postValue(Event((CustomResponse.Loading())))
 
-
-     error.let{
-
-         _registration_status.postValue(Event(CustomResponse.Error(it.toString())))
-         return
-     }
-        _registration_status.postValue(Event(CustomResponse.Loading()))
-
-        viewModelScope.launch {
-
-            val result = repository.register(email,password,studentUID)
-
-            _registration_status.postValue(Event(result))
-
-
+        viewModelScope.launch(dispatcher) {
+            val result = repository.register(email,password, studentUID)
+            _registerStatus.postValue(Event(result))
 
         }
+
+
 
 
 
     }
 
 
+    }
 
-
-
-}
