@@ -6,7 +6,6 @@ import com.shashank.cu_placement_cell.other.CustomResponse
 interface AuthRepositoryInterface {
 
     suspend fun register(email:String,password:String,studentUid:String):CustomResponse<AuthResult>
-
-
+    suspend fun login(email: String,password: String):CustomResponse<AuthResult>
 
 }
