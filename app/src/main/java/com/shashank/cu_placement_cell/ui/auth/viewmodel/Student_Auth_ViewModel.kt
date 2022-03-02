@@ -1,6 +1,5 @@
 package com.shashank.cu_placement_cell.ui.auth.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,7 +10,6 @@ import com.google.firebase.auth.AuthResult
 import com.shashank.cu_placement_cell.other.BaseClass.Companion.MIN_VAL
 import com.shashank.cu_placement_cell.other.CustomResponse
 import com.shashank.cu_placement_cell.other.Event
-import com.shashank.cu_placement_cell.repository.AuthRepository
 import com.shashank.cu_placement_cell.repository.AuthRepositoryInterface
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +21,10 @@ class Student_Auth_ViewModel(private  val repository: AuthRepositoryInterface
 
     private val _registerStatus = MutableLiveData<Event<CustomResponse<AuthResult>>>()
     val  registerStatus : LiveData<Event<CustomResponse<AuthResult>>> = _registerStatus
+
+
+    private val _loginStatus = MutableLiveData<Event<CustomResponse<AuthResult>>>()
+    val  loginStatus : LiveData<Event<CustomResponse<AuthResult>>> = _loginStatus
 
 
 
@@ -48,11 +50,29 @@ class Student_Auth_ViewModel(private  val repository: AuthRepositoryInterface
 
         }
 
+    }
 
 
+    fun login(email: String,password: String){
+
+        val error = if(email.isEmpty()||password.isEmpty()){
+            "Enter all fields"
+        }else null
+
+
+        error?.let {
+            _loginStatus.postValue(Event(CustomResponse.Error(it)))
+        }
+
+        viewModelScope.launch(dispatcher) {
+
+            val result = repository.login(email, password)
+            _loginStatus.postValue(Event(result))
+        }
 
 
     }
+
 
 
     }
