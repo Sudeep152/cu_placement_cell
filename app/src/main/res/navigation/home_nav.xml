@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/companyFragment">
+
+    <fragment
+        android:id="@+id/companyFragment"
+        android:name="com.shashank.cu_placement_cell.ui.home.CompanyFragment"
+        android:label="fragment_company"
+        tools:layout="@layout/fragment_company" />
+    <fragment
+        android:id="@+id/applyFragment"
+        android:name="com.shashank.cu_placement_cell.ui.home.ApplyFragment"
+        android:label="fragment_apply"
+        tools:layout="@layout/fragment_apply" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.shashank.cu_placement_cell.ui.home.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

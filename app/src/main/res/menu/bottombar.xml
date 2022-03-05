@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/companyFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_work_24"
+        android:title="Home"
+
+        />
+    <item
+        android:id="@+id/applyFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_app_registration_24"
+        android:title="Applied"
+
+        />
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"
+
+        />
+</menu>

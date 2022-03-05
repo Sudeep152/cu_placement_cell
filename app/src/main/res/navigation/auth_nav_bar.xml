@@ -10,7 +10,11 @@
         android:label="Student_Login_Fragment" >
         <action
             android:id="@+id/action_student_Login_Fragment_to_student_Regitster_Fragment"
-            app:destination="@id/student_Regitster_Fragment" />
+            app:destination="@id/student_Regitster_Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/student_Regitster_Fragment"

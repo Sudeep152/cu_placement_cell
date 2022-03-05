@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "692973661317",
+    "project_id": "cuplacementcell-f9097",
+    "storage_bucket": "cuplacementcell-f9097.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692973661317:android:b4858d70bf66a340d90dec",
+        "android_client_info": {
+          "package_name": "com.shashank.cu_placement_cell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692973661317-sl0ac17tqh7qtmmvkfk025h8mrj56bgm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shashank.cu_placement_cell",
+            "certificate_hash": "8528178aac0ac1977415b2b7f5907504d9c729f5"
+          }
+        },
+        {
+          "client_id": "692973661317-7tfuf9cq0cto6pp0mjcjmu8uk5c34161.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOmQ4KFb5LNer8xP8UV7pwUoL3hXoN2G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692973661317-7tfuf9cq0cto6pp0mjcjmu8uk5c34161.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
